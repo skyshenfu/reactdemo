@@ -5,14 +5,16 @@ import React from 'react';
 import {
     Text, View, TouchableHighlight, StyleSheet
 } from 'react-native';
+import Head from './Head';
 class Ios extends React.Component{
     constructor(props){
         super(props);
     }
     render(){
         return(
+
             <View style={styles.bg}>
-                <Text style={styles.font}>Ios</Text>
+                <Head title={'Ios'}/>
             </View>
         )
 
@@ -22,11 +24,11 @@ const styles=StyleSheet.create(
     {
         bg:{
             flex:1,
-            justifyContent: 'center',
+            flexDirection:'column',
             alignItems: 'center',
             backgroundColor:"#ffffff"
         },
-        font: {
+        font:{
             fontSize: 20,
             textAlign: 'center',
             margin: 10,

@@ -6,34 +6,27 @@ import {
     Text, View, TouchableOpacity, StyleSheet
 } from 'react-native';
 import Head from './Head';
-import AndroidDetail from  './AndroidDetail'
-class Android extends React.Component{
+class AndroidDetail extends React.Component{
     constructor(props){
         super(props);
-        console.log("Android");
     }
     render(){
         return(
             <View style={styles.bg}>
-                <Head title={'Android'}/>
-                <View>
-                    <TouchableOpacity
-                        activeOpacity={0.75}
-                        style={styles.touchjump}
-                        onPress={this.click1.bind(this)}
-                    >
-                        <Text style={{color: 'gray', fontSize: 12}}>click</Text>
-                    </TouchableOpacity>
-                </View>
+                <Head title={'AndroidDetail'}/>
+                <TouchableOpacity
+                    activeOpacity={0.75}
+                    style={styles.touchjump}
+                    onPress={this.click1.bind(this)}
+                >
+                    <Text style={{color: 'gray', fontSize: 12}}>back</Text>
+                </TouchableOpacity>
             </View>
         )
     }
     click1(){
         const {navigator}=this.props;
-        navigator.push({
-            name:'AndroidDetail',
-            component :AndroidDetail
-        })
+        navigator.pop();
     }
 }
 const styles=StyleSheet.create(
@@ -50,9 +43,8 @@ const styles=StyleSheet.create(
             margin: 10,
         },
         touchjump:{
-            height:30,
-            margin: 10,
+            height:30
         }
     }
 )
-export default Android;
+export default AndroidDetail;

@@ -5,6 +5,7 @@ import React from 'react';
 import {
     Text, View, TouchableHighlight, StyleSheet
 } from 'react-native';
+import Head from './Head';
 class Chrome extends React.Component{
     constructor(props){
         super(props);
@@ -12,7 +13,7 @@ class Chrome extends React.Component{
     render(){
         return(
             <View style={styles.bg}>
-                <Text style={styles.font}>Chrome</Text>
+                <Head title={'Chrome'}/>
             </View>
             )
 
@@ -22,11 +23,11 @@ const styles=StyleSheet.create(
     {
         bg:{
             flex:1,
-            justifyContent: 'center',
+            flexDirection:'column',
             alignItems: 'center',
             backgroundColor:"#ffffff"
         },
-        font: {
+        font:{
             fontSize: 20,
             textAlign: 'center',
             margin: 10,

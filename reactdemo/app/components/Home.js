@@ -9,6 +9,7 @@ import Chrome from './Chrome';
 import Android from './Android';
 import Ios from './Ios';
 import Windows from './Windows';
+import {redColor} from '../constants/Constants'
 
 export default class TabBarView extends React.Component {
 
@@ -16,7 +17,7 @@ export default class TabBarView extends React.Component {
         super(props);
         console.log("Home");
         this.state = {
-            selectedTab: 'android'
+            selectedTab: 'apple'
         };
     }
 
@@ -25,38 +26,42 @@ export default class TabBarView extends React.Component {
             <View style={styles.container}>
                 <TabNavigator>
                     <TabNavigator.Item
-                        selected={this.state.selectedTab === 'android'}
-                        title="Android"
-                        titleStyle={styles.tabText}
-                        renderIcon={() => <Icon name={'android'} size={20} color={'gray'} />}
-                        renderSelectedIcon={() =>  <Icon name={'android'} size={20} color={'blue'} />}
-                        onPress={() => this.setState({ selectedTab: 'android' })}>
-                        <Android navigator={this.props.navigator}/>
-                    </TabNavigator.Item>
-                    <TabNavigator.Item
                         selected={this.state.selectedTab === 'apple'}
                         title="IOS"
                         titleStyle={styles.tabText}
+                        selectedTitleStyle={styles.selectedTabText}
                         renderIcon={() => <Icon name={'apple'} size={20} color={'gray'} />}
-                        renderSelectedIcon={() =>  <Icon name={'apple'} size={20} color={'blue'} />}
+                        renderSelectedIcon={() =>  <Icon name={'apple'} size={20} color={redColor} />}
                         onPress={() => this.setState({ selectedTab: 'apple' })}>
                         <Ios navigator={this.props.navigator}/>
+                    </TabNavigator.Item>
+                    <TabNavigator.Item
+                        selected={this.state.selectedTab === 'android'}
+                        title="Android"
+                        titleStyle={styles.tabText}
+                        selectedTitleStyle={styles.selectedTabText}
+                        renderIcon={() => <Icon name={'android'} size={20} color={'gray'} />}
+                        renderSelectedIcon={() =>  <Icon name={'android'} size={20} color={redColor} />}
+                        onPress={() => this.setState({ selectedTab: 'android' })}>
+                        <Android navigator={this.props.navigator}/>
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'windows'}
                         title="Windows"
                         titleStyle={styles.tabText}
+                        selectedTitleStyle={styles.selectedTabText}
                         renderIcon={() => <Icon name={'windows'} size={20} color={'gray'} />}
-                        renderSelectedIcon={() =>  <Icon name={'windows'} size={20} color={'blue'} />}
+                        renderSelectedIcon={() =>  <Icon name={'windows'} size={20} color={redColor} />}
                         onPress={() => this.setState({ selectedTab: 'windows' })}>
                         <Windows navigator={this.props.navigator}/>
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         titleStyle={styles.tabText}
+                        selectedTitleStyle={styles.selectedTabText}
                         selected={this.state.selectedTab === 'chrome'}
                         title="chrome"
                         renderIcon={() => <Icon name={'chrome'} size={20} color={'gray'} />}
-                        renderSelectedIcon={() =>  <Icon name={'chrome'} size={20} color={'blue'} />}
+                        renderSelectedIcon={() =>  <Icon name={'chrome'} size={20} color={redColor} />}
                         onPress={() => this.setState({ selectedTab: 'chrome' })}>
                         <Chrome navigator={this.props.navigator}/>
                     </TabNavigator.Item>
@@ -76,7 +81,7 @@ const styles = StyleSheet.create({
         fontSize: 13
     },
     selectedTabText: {
-        color: "blue",
+        color: redColor,
         fontSize: 13
     },
     icon: {

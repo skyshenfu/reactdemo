@@ -1,7 +1,7 @@
 /**
  * Created by zhangty on 2017/2/16.
  */
-import * as types from '../actions/actionTypes';
+import * as types from '../constants/actionTypes';
 const initialState = {
     isok: true,
 };
