@@ -13,9 +13,10 @@ class Android extends React.Component{
         console.log("Android");
     }
     render(){
+        const {navigator}=this.props;
         return(
             <View style={styles.bg}>
-                <Head title={'Android'}/>
+                <Head title={'Android'} headtype={"navicon"} />
                 <View>
                     <TouchableOpacity
                         activeOpacity={0.75}

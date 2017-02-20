@@ -13,7 +13,7 @@ class Windows extends React.Component{
     render(){
         return(
             <View style={styles.bg}>
-                <Head title={'Windows'}/>
+                <Head title={'Windows'} headtype={"navicon"}/>
             </View>
         )
 

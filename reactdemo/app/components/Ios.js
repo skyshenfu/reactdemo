@@ -14,7 +14,7 @@ class Ios extends React.Component{
         return(
 
             <View style={styles.bg}>
-                <Head title={'Ios'}/>
+                <Head title={'Ios'} headtype={"navicon"} />
             </View>
         )
 

@@ -13,7 +13,7 @@ class AndroidDetail extends React.Component{
     render(){
         return(
             <View style={styles.bg}>
-                <Head title={'AndroidDetail'}/>
+                <Head title={'AndroidDetail'} headtype={"chevron-left"} callbackParent={this.click1.bind(this)}/>
                 <TouchableOpacity
                     activeOpacity={0.75}
                     style={styles.touchjump}
@@ -28,6 +28,7 @@ class AndroidDetail extends React.Component{
         const {navigator}=this.props;
         navigator.pop();
     }
+
 }
 const styles=StyleSheet.create(
     {

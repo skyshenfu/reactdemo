@@ -13,7 +13,7 @@ class Chrome extends React.Component{
     render(){
         return(
             <View style={styles.bg}>
-                <Head title={'Chrome'}/>
+                <Head title={'Chrome'} headtype={"navicon"}/>
             </View>
             )
 
